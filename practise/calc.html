@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="calc.css">
+
+</head>
+<body>
+    <div id="calc">
+    <input type="text" placeholder="enter numbers" id="input">
+        <div id="bt">
+
+        <button class="bti" width="100" onclick="input ='';
+        document.getElementById('input').value = input;" >C</button> 
+
+        <button class="bti" 
+        onclick="input = input + '+';
+        document.getElementById('input').value = input;">+</button>
+
+        <button class="bti" onclick="input = eval(input);
+        document.getElementById('input').value = input;">=</button>
+        
+        <button class="bti" 
+        onclick="input = input + '-';
+        document.getElementById('input').value = input;">-</button>
+
+        <button class="bti" 
+        onclick="input = input + '*';
+        document.getElementById('input').value = input;">*</button>
+
+        <button class="bti" width="100" onclick="input = input.slice(0, -1);
+        document.getElementById('input').value = input;" >⌫</button>
+
+        <button class="bti"
+        onclick="input = input + '/';
+        document.getElementById('input').value = input;">/</button>
+
+        <button class="bti" onclick="input = input + '.';
+        document.getElementById('input').value = input;">.</button>
+
+         
+        <button class="bti" onclick="input = input + '1';
+        document.getElementById('input').value = input;">1</button>
+
+        <button class="bti" onclick="input = input + '2';
+        document.getElementById('input').value = input;">2</button>
+
+        <button class="bti" onclick="input = input + '3';
+        document.getElementById('input').value = input;">3</button>
+
+        <button class="bti" onclick="input = input + '4';
+        document.getElementById('input').value = input;">4</button>
+
+        <button class="bti" onclick="input = input + '5';
+        document.getElementById('input').value = input;">5</button>
+        
+        <button class="bti" onclick="input = input + '6';
+        document.getElementById('input').value = input;">6</button>
+
+        <button class="bti" onclick="input = input + '7';
+        document.getElementById('input').value = input;">7</button>
+
+        <button class="bti" onclick="input = input + '8';
+        document.getElementById('input').value = input;">8</button>
+
+        <button class="bti" onclick="input = input + '9';
+        document.getElementById('input').value = input;">9</button>
+
+        <button class="bti" onclick="input = input + '0';
+        document.getElementById('input').value = input;">0</button>
+
+    
+        </div>
+    </div>
+</body>
+<script>
+    let input = '';
+    document.getElementById('input').value = input;
+</script>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Objects</h1>
+</body>
+<script>
+    // let person = {
+    //     name: 'John',
+    //     age: 30,
+    //     city: 'New York',
+    //     'a-bc' : 'value',
+    // };
+    // console.log(typeof (person));
+    // console.log(person);
+    // console.log(person.name);
+    // console.log(person['age']);
+    // console.log(person['a-bc']);
+
+    // person.age = 31;
+    // console.log(person.age);
+    // console.log(person);
+
+    // delete person.city;
+    // // delete person['city'];
+    // console.log(person);
+
+    let person = {
+        name: 'John',
+        age: 30,
+        city: 'New York',
+        greet: function() {
+            console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+        }
+    };
+    person.greet();
+
+   console.log(Math.sqrt(16)); // now hopefully you understand that Math is an object and sqrt is a method of that object and also console is an object and log is a method of that object.
+
+
+   // autoboxing 
+
+   console.log('hello'.length); // here 'hello' is a string primitive but we can access length property because of autoboxing, JavaScript automatically converts the string primitive to a String object when we try to access a property or method on it.
+
+    console.log('ibaad'.toUpperCase()); // here 'ibaad' is a string primitive but we can access toUpperCase method because of autoboxing, JavaScript automatically converts the string primitive to a String object when we try to access a property or method on it. 
+    
+    console.log((123).toString());
+
+    console.log('hey i am from amazon'.replace('amazon', 'apple')); 
+
+// object reference
+
+let a =5;
+let b = a;
+console.log(`a: ${a}, b: ${b}`); 
+a = 10;
+console.log(`a: ${a}, b: ${b}`); // here b is not affected by the change to a because a and b are storing the value directly in memory and they are independent of each other
+console.log(a === b); // false because a and b are storing different values in memory
+
+let obj1 = {name: 'John'};
+let obj2 = obj1;
+console.log(`obj1 : ${obj1.name}, obj2: ${obj2.name}`);
+obj1.name = 'Jane';
+console.log(`obj1 : ${obj1.name}, obj2: ${obj2.name}`); // here obj2 is affected by the change to obj1 because both obj1 and obj2 are referencing the same object in memory
+console.log(obj1 === obj2); // true because both obj1 and obj2 are referencing the same object in memory
+
+
+
+let A = {num : 5};
+let B = { num : 5};
+console.log(A === B); // false because A and B are referencing different objects in memory even though they have the same properties and values
+
+console.log(A.num === B.num); // true because A.num and B.num are both storing the same value in memory which is 5
+
+</script>
+</html>

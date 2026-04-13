@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>json</h1>
+</body>
+    <script>
+        let person = {
+            name: 'John',
+            age: 30,
+            address : {
+                city : 'new york',
+                country : 'usa'
+            },
+            display : function(){
+                console.log(`name: ${this.name}, age: ${this.age}`);
+            },
+        };
+       
+    
+        console.log(person.display());
+        console.log(person);
+        console.log(typeof person);
+
+        let jsonn = JSON.stringify(person); // converting JavaScript object to JSON string
+        console.log(typeof jsonn);
+        console.log(jsonn);
+
+        let newobj = JSON.parse(jsonn); // converting JSON string back to JavaScript object
+        console.log(newobj);
+        console.log(typeof newobj);
+        console.log(newobj.display); // here we lost the display method because JSON.stringify only converts the data and not the methods of the object.
+    
+    </script>
+</html>

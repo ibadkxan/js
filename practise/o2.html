@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>obj 2</h1>
+</body>
+<script>
+     let person = {
+        name : 'jhon',
+        age : 30,
+        city : 'new york'
+     }
+     
+     let {name} = person; // object destructuring
+     console.log(name);
+
+     let product ={
+        size : 'large',
+        price : 100,
+        color : 'red'
+     }
+     let copy = product; // object reference
+     console.log(product);
+     console.log(copy);
+     product.price = 999;
+     copy.color = 'blue';
+     console.log(product.color);
+     console.log(product);
+     console.log(copy);
+
+
+     console.log(product['size']);
+
+ 
+</script>
+</html>

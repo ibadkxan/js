@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow: 2px 2px 5px rgb(0, 0, 0);
+        font-size: 40px;
+    }
+</style>
+<body>
+    <h1> practise set</h1>
+</body>
+<script>
+  let age = 20;
+  printage();
+  let result = age>=18? 'you are an adult': 'you are a minor';
+ console.log(result);
+
+//  let name = 'John';
+//  let finalResult = name || 'name is not defined';
+//  console.log(finalResult);
+
+function printage(){
+    console.log(`your age is ${age}`);
+}
+
+let sumResult = sum(5,10);
+console.log(sumResult);
+function sum (a,b){
+    return a+b;
+}
+
+function greet(name = 'payaree'){
+    console.log(`hello ${name} uncle`);
+}
+greet('john');
+greet();
+
+function test() {
+  return console.log("Helo");
+}
+let testResult = test();
+console.log(testResult);
+
+function oddoreven(num){
+    if(num%2 === 0) return 'even';
+    else return 'odd';
+}
+console.log(oddoreven(99));
+
+function largernum(a,b){
+    if(a>b) return a;
+    else if (b>a) return b;
+    else return 'both numbers are equal';
+}
+console.log(largernum(5,10));
+
+function isPrime(num) {
+    if (num <= 1) return false;
+    if (num === 2) return true;
+    if (num % 2 === 0) return false;
+
+    for (let i = 3; i <= Math.sqrt(num); i += 2) {
+        if (num % i === 0) return false;
+    }
+
+    return true;
+}
+console.log(isPrime(9));
+
+function toFahrenheit(celsius){
+    return (celsius * 9/5) + 32;
+}
+console.log(toFahrenheit(25));
+</script>
+</html>

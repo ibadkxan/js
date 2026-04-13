@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>json with local storage</h1>
+</body>
+<script>
+   let person = {
+            name: 'John',
+            age: 30,
+            address : {
+                city : 'new york',
+                country : 'usa'
+            },
+            display : function(){
+                console.log(`name: ${this.name}, age: ${this.age}`);
+            },
+        }; 
+
+        // console.log(person);
+       
+    localStorage.setItem('name', 'ibad'); // storing a string in local storage
+       console.log(localStorage.getItem('name')); // retrieving the string from local storage
+
+     localStorage.setItem('person', JSON.stringify(person)); // storing the person object in local storage as a JSON string
+     console.log(localStorage.getItem('person'));
+
+     let retrievedPerson = JSON.parse(localStorage.getItem('person')); // converting the JSON string back to a JavaScript object
+     console.log(retrievedPerson);
+     console.log(retrievedPerson.display); // here we lost the display method because JSON.stringify only converts the data and not the methods of the object.
+   
+     localStorage.removeItem('name'); // removing the name item from local storage
+     console.log(localStorage.getItem('name')); 
+
+    localStorage.clear(); // clearing all items from local storage
+    console.log(localStorage.getItem('person'));
+    
+
+
+
+
+
+</script>
+</html>

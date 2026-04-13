@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .a{
+        background-color: rgb(121, 236, 171);
+        border-radius: 12px;
+        padding: 8px 16px; 
+        margin: 10px;
+        cursor: pointer;
+        border: none;
+    }
+    .b{
+        background-color: rgb(188, 180, 180);
+        border-radius: 6px;
+        padding: 8px 19px; 
+        margin: 10px;
+        cursor: pointer;
+        border: 2px solid black;
+    }
+    
+</style>
+<body>
+   <h1>exploring variables in js</h1> 
+
+    <button class="a" onclick="quantity++; document.getElementById('a').innerText = `your cart has ${quantity} items`">Add to bag</button>
+
+    <button class="b" onclick="
+    if (quantity > 0) {
+        quantity--;
+        document.getElementById('a').innerText = `your cart has ${quantity} items`;
+    }">🫀wishlist</button>
+
+    <h1 id="a"></h1>
+   
+
+</body>
+<script>
+let quantity = 0;
+document.getElementById('a').innerText = `your cart has ${quantity} items`;
+</script>
+</html>
