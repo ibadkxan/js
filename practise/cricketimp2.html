@@ -54,6 +54,13 @@
 
     <button onclick=" localStorage.clear(); 
     resetScore()"> reset </button>
+
+
+  <h1 id="usermove"></h1>
+  <h1 id="computermove"></h1>
+  <h1 id="resultmsg"></h1>
+  <h1 id="scoreboard"></h1>
+    
   </body>
   <script>
     let scoreStr = localStorage.getItem('score');
@@ -135,7 +142,14 @@
       // console.log(score);
 
       localStorage.setItem('score', JSON.stringify(score));
-      alert(`you have chosen ${usermove}, computer choice is ${computermove},\n\n the result is ${resultmsg},\n\n scoreboard : ${score.display()}`);
+
+      // document.getElementById('usermove').innerText = `you chose ${usermove}`;
+      document.querySelector('#usermove').innerText = `you chose ${usermove}`;
+      document.querySelector('#computermove').innerText = `computer chose ${computermove}`;
+      document.querySelector('#resultmsg').innerText = `result: ${resultmsg}`;
+      document.querySelector('#scoreboard').innerText = `scoreboard: ${score.display()}`;
+
+      // alert(`you have chosen ${usermove}, computer choice is ${computermove},\n\n the result is ${resultmsg},\n\n scoreboard : ${score.display()}`);
     }
   </script>
 </html>

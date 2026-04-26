@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>date & dom</title>
+</head>
+<body>
+    <h1>date & dom </h1>
+    
+    <div class = "one"> yoo bro </div>
+    <script>
+        let currentDate = new Date();
+        console.log(currentDate);
+        console.log(currentDate.getTime());
+        console.log(currentDate.getFullYear());
+        console.log(currentDate.getMonth());
+        console.log(currentDate.getDate());
+        console.log(currentDate.getHours());
+        console.log(currentDate.getMinutes());
+        console.log(currentDate.getSeconds());
+        console.log(currentDate.toDateString());
+
+        let button = document.createElement('button');
+        document.querySelector('.one').appendChild(button);
+        button.innerText = "click me";
+    </script>
+</body>
+</html>
