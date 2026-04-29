@@ -11,55 +11,73 @@
       text-transform: uppercase;
     }
     button {
-      background-color: rgb(255, 183, 183);
-      border-radius: 12px;
+      background-color: rgb(248, 190, 190);
+      border-radius: 52px;
       padding: 8px 16px;
       margin: 10px;
       cursor: pointer;
       border: 2px solid rgb(0, 0, 0);
     }
+    #usermove, #computermove, #resultmsg, #scoreboard {
+      margin: 25px;
+      color: rgb(63, 2, 2);
+
+    }
+
+    .click{
+      border: none;
+      background-color: transparent;
+    }
+
+    .img{
+      height: 120px;
+    }
   </style>
   <body>
+
     <h1>bat ball stump game</h1>
 
-    <button
+  
+
+    <button class="click"
       onclick="
         let computermove = computerChoice();
         let resultmsg = getresult('bat', computermove);
         showresult('bat', computermove, resultmsg);
       "
     >
-      bat
+          <img src="https://png.pngtree.com/png-clipart/20241102/original/pngtree-cute-cartoon-cricket-bat-clipart-illustration-png-image_16667563.png" alt="bat image"  class="img">
     </button>
 
-    <button
+    <button class="click"
       onclick="
         computermove = computerChoice();
         resultmsg = getresult('ball', computermove);
         showresult('ball', computermove, resultmsg);
       "
     >
-      ball
+      <img src="https://www.shutterstock.com/image-illustration/3d-shiny-new-test-match-600nw-2449821457.jpg" alt="ball image"  class="img">
     </button>
 
-    <button
+    <button class="click"
       onclick="
         computermove = computerChoice();
         resultmsg = getresult('stump', computermove);
         showresult('stump', computermove, resultmsg);
       "
     >
-      stump
+      <img src=https://as1.ftcdn.net/v2/jpg/17/15/68/28/1000_F_1715682851_sO6rwsYZ07iYi2Jxt5349M66BiHpK0Ni.webp alt="stump img " class="img">
     </button>
-
-    <button onclick=" localStorage.clear(); 
-    resetScore()"> reset </button>
 
 
   <h1 id="usermove"></h1>
   <h1 id="computermove"></h1>
   <h1 id="resultmsg"></h1>
   <h1 id="scoreboard"></h1>
+
+
+      <button onclick=" localStorage.clear(); 
+    resetScore(); showresult();"> reset </button>
     
   </body>
   <script>
@@ -76,6 +94,8 @@
         score.display = function(){
           return (`won: ${this.won}, lost: ${this.lost}, tie: ${this.tie}`);
       }
+
+      // showresult('none', 'none', 'score reset'); 
 
     }
 
@@ -143,11 +163,17 @@
 
       localStorage.setItem('score', JSON.stringify(score));
 
-      // document.getElementById('usermove').innerText = `you chose ${usermove}`;
-      document.querySelector('#usermove').innerText = `you chose ${usermove}`;
-      document.querySelector('#computermove').innerText = `computer chose ${computermove}`;
-      document.querySelector('#resultmsg').innerText = `result: ${resultmsg}`;
+  
+      document.querySelector('#usermove').innerText = usermove !== undefined ? `you chose ${usermove}` : ' ';
+      document.querySelector('#computermove').innerText = computermove !== undefined ? `computer chose ${computermove}` : ' ';
+      document.querySelector('#resultmsg').innerText = resultmsg !== undefined ? `result: ${resultmsg}` : ' ';
       document.querySelector('#scoreboard').innerText = `scoreboard: ${score.display()}`;
+
+      // truthy and falsy 
+      // document.querySelector('#usermove').innerText = usermove ? `you chose ${usermove}` : ' ';
+      // document.querySelector('#computermove').innerText = computermove  ? `computer chose ${computermove}` : ' ';
+      // document.querySelector('#resultmsg').innerText = resultmsg  ? `result: ${resultmsg}` : ' ';
+      // document.querySelector('#scoreboard').innerText = `scoreboard: ${score.display()}`;
 
       // alert(`you have chosen ${usermove}, computer choice is ${computermove},\n\n the result is ${resultmsg},\n\n scoreboard : ${score.display()}`);
     }
